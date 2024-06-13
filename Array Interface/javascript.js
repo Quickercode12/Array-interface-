@@ -1,5 +1,6 @@
 let list = [];
 
+// insert function 
 function insertItem() {
     let item = prompt("Enter item to insert:");
 
@@ -10,6 +11,7 @@ function insertItem() {
     }
 }
 
+// delete function 
 function deleteItem() {
     if (list.length > 0) {
         let item = list.pop();
@@ -20,6 +22,7 @@ function deleteItem() {
     }
 }
 
+// remover function 
 function removeItem() {
 
     if(list.length < 1){
@@ -28,27 +31,39 @@ function removeItem() {
 
     else{
         let item = prompt("Enter item to remove:");
-    let index = list.indexOf(item);
-    if (index > -1) {
-        list.splice(index, 1);
-        updateListDisplay();
-        document.getElementById("result").innerText = `Removed ${item}`;
-    } else {
-        document.getElementById("result").innerText = `${item} not index is found in list`;
-    }
+        let index = list.indexOf(item);
+        
+        if (index > -1) {
+            list.splice(index, 1);
+            updateListDisplay();
+            document.getElementById("result").innerText = `Removed ${item}`;
+        } 
+            
+        else {
+            document.getElementById("result").innerText = `${item} not index is found in list`;
+        }
     }
 }
 
+// find the size function 
 function sizeOfList() {
     document.getElementById("result").innerText = `Size of list: ${list.length}`;
 }
 
+
+// find the mid function 
 function midOfList() {
+    
     if (list.length > 0) {
+        
         let midIndex = Math.floor(list.length / 2);
         document.getElementById("result").innerText = `Mid item: ${list[midIndex]}`;
-    } else {
+        
+    }
+    else {
+        
         document.getElementById("result").innerText = "List is empty";
+        
     }
 }
 
